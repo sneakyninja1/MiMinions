@@ -307,7 +307,7 @@ def set_state(workspace_id, key, value):
     
     workspace.state[key] = parsed_value
     
-    from datetime import datetime
+    from datetime import datetime, timezone
     workspace.updated_at = datetime.now(timezone.utc).isoformat()
     
     manager.save_workspaces(workspaces)
